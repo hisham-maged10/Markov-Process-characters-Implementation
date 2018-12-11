@@ -1,0 +1,50 @@
+/**
+ * @author ${hisham_maged10}
+ *https://github.com/hisham-maged10
+ * ${DesktopApps}
+ */
+public class MarkovTester
+{
+	public static void main(String[] args)
+	{
+		testing();
+	}
+
+	public static void testing()
+	{
+		Markov m=new MarkovModel(5);
+		m.setRandom(615);
+		//Markov ms=new MarkovTwo();
+		//ms.setRandom(42);
+
+		m.getRandomText(50);
+		//printOut(m.getRandomText(1000));
+		//long sT=System.nanoTime();
+		//for(int i=0;i<3;i++)
+		//m.getRandomText(1000000);
+		//double t=(System.nanoTime()-(double)sT)/1e9;
+		//System.out.printf("time taken by new Algoirthm: %.5f",t);
+		//sT=System.nanoTime();
+		//for(int i=0;i<3;i++)
+		//	ms.getRandomText(1000000);
+		//t=(System.nanoTime()-(double)sT)/1e9;
+		//System.out.printf("\nTime taken by old Algorithm: %.5f",t);
+	}
+	public static void printOut(String unFormattedStr)
+	{
+		String[] words=unFormattedStr.split("\\s+");
+		int lineLength=0;
+		System.out.println("****************** Start *****************");
+		for(int i=0;i<words.length;i++)
+		{
+			System.out.print(words[i]+" ");
+			lineLength+=words[i].length()+1; //1 for the space
+			if(lineLength>60)
+			{
+				System.out.println();
+				lineLength=0;
+			}
+		}
+		System.out.println("\n****************** End *****************");
+	}
+}
